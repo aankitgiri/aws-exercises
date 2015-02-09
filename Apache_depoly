@@ -1,0 +1,24 @@
+1)
+cd /etc/apache2
+
+vi ports.conf
+# Listen 80#
+
+cd sites-enabled/
+
+vi 000-default.conf
+# ServerName www.ankit.com
+  DocumentRoot /var/www/html/ankit
+
+cd /apache2
+vi apache2.conf
+
+cd ..
+vi hosts
+
+service apache2 reload
+vi var/www/html/ankit/index.html
+
+2)
+sudo a2enmod ssl
+sudo service apache2 restart

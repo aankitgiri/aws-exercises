@@ -1,0 +1,64 @@
+apt-get update
+apt-get install build-essential
+cd /usr/local/lib
+wget http://apache.bytenet.in//httpd/httpd-2.4.12.tar.bz2
+tar xvfz httpd-2.4.12.tar.bz2 
+#tar (child): httpd-2.4.12.tar.bz2: Cannot open: No such file or directory
+tar (child): Error is not recoverable: exiting now
+tar: Child returned status 2
+tar: Error is not recoverable: exiting now
+#
+#It gives an error since xvfz is used for .gz tarball#
+tar xvjf httpd-2.4.12.tar.bz2
+ls
+cd  httpd-2.4.12/srclib
+ls Makefile.in
+wget http://lib.gblearn.com/apache/apr/apr-1.5.1.tar.gz
+tar xvfz apr-1.5.1.tar.gz
+ls
+wget http://lib.gblearn.com/apache/apr/apr-util-1.5.3.tar.gz
+tar xvfz apr-util-1.5.3.tar.gz
+wget http://lib.gblearn.com/apache/pcre/pcre-8.34.tar.gz
+tar xvfz pcre-8.34.tar.gz
+ls
+cd apr-1.5.1
+./configure
+make
+make install
+cd ../apr-util-1.5.3
+./configure --with-apr=/usr/local/apr/bin/apr-1-config
+make
+make install
+cd ../pcre-8.34
+./configure --prefix=/usr/local/pcre
+make
+make install
+cd ../../
+./configure --prefix=/usr/local/apache2 --with-pcre=/usr/local/pcre -enable-so
+make
+make install
+usr/local/apache2/bin/apachectl start
+
+#Output message 
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+#
+
+usr/local/apache2/bin/apachectl restart
+usr/local/apache2/bin/apachectl stop
+usr/local/apache2/bin/apachectl start
+ifconfig
+
+#Copy the inet address http://192.168.0.103/
+type the address in browser
+Output:
+It works!
+ 
+
+
+
+
+
+
+
+
+
