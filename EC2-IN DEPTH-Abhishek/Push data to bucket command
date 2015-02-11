@@ -1,0 +1,1 @@
+aws s3 cp GIT_Exercise s3://mybucketfors3/file1

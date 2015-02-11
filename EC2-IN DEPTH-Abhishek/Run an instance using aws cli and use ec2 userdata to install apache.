@@ -1,0 +1,2 @@
+aws ec2 run-instances --image-id "ami-ded098b6" --key-name "myami" --security-group-ids "sg-201cb444" --instance-type "t2.micro" --subnet-id subnet-f76bb2dc --count 1 --user-data file://apachescript.sh --region us-east-1
+

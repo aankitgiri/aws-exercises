@@ -1,0 +1,1 @@
+ec2-create-image i-99451a68 --name myami [--description AMI of running server] [--no-reboot] -W sEQF9U3WXwN+H5CYrVUsBzRKfl3Td1jwUZuGVhCC
