@@ -1,0 +1,53 @@
+1.To connect your remote office to your VPC for internal network access, what would you need to use?
+Ans:We need to create a VPN tunnel to connect our remote office to VPC .For that we need to specify Customer gateway,Virtul private gateway(to connect to predefined VPC) and VPN connection which will ask credentials for both VPG and CG.
+
+
+
+2.What is the hourly rate to run a VPC?
+Ans:- VPC service is free but we have to pay for the infrastructure which we develop in VPC according to that instance.
+
+
+
+3.To enable a VPC EC2 instance to be publicly accessible without a NAT, it must have an elastic IP address and an internet gateway.
+Ans:-Internet Gateway is must to access it publically because elastic IP addresss can also be applied to private IP ,there is no boundation but if you want it to be connected to outer world ,we assign a internet gateway to it.
+
+
+
+4.Why do we use NAT instance?
+Ans:- NAT basically sets a plattform for you private subnet instances so that they can also communicate to outer world because the instances in private subnet will not have access to outer world.So we provide outbound internet access to those private subnet instances by setting up NAT instance in your public subnet so that all instances in your private subnet can also connect through NAT instance.Nat instance basically provides the path for your private instances to outer world depending on our constraints.
+
+
+ 
+5.All operations on elastic IP addresses can be performed programmatically through the API, or manually from the AWS Management Console
+ans:-Both the options will work.AWSCLI can also be used to perform operations on elastic IP ,like associate-address and so many commands.
+
+
+
+6.A VPC subnet can have multiple route tables.
+Ans:-No ,a subnet  can only be associated with one route table at a time.
+
+
+7.In order to assign an EIP to an instance, the instance must belong to a subnet which has an internet gateway attached to it.
+Ans:-In non default vpc your private instances will not have a public IP so you can't connect to outer world.If you want to,then you need to attach an internet gateway to VPC and can provide the public IP to instances.So for elastic IP to your instances,you must have an internet gateway attached to your VPC.
+
+
+8.You can assign an Elastic IP address to a network interface.
+ANS;- Yes,we can and then we can attach to any VPC instance to fix it IP depending upon our use case.
+
+
+9.To enable a VPC EC2 instance to be publicly accessible without a NAT, it must have an elastic IP address and an internet gateway
+Ans-Yes,NAT does the same function for you but provide access via public subnet instances.If you want your instance to be connected to outside world ,you must have an internet gateway,not necessarily elastic IP address because you must be getting a public ip the moment you connect to IG gateway making that instance public instance.
+
+
+10.Create a Wordpress website in VPC (Public,Private) Environment.
+Ans:- Done by taking vpc access.
+
+
+1.created vpc by wizard.
+2.assign CIDR
+3.made public and private subnet
+4.we will have a NAT instance in case you are making scenario 2 architecture preconfigured by AWS.
+5.made 2 instances..one in public subnet(nginx -wordpress) and one in private subnet (mysql)
+6.ssh into private instance by first doing scp for your private instance.pem to your public instance.and then do ssh in private after logging in to public.Install mysql in private.install wordpress in public.
+7.created db user having full privileges to your created DB and given access to user by specifying its ip in create user command.Change the bind address also.
+8.made your wordpress site run. 
