@@ -1,0 +1,22 @@
+{
+  "Id": "Policy1424177999773",
+  "Statement": [
+    {
+      "Sid": "Stmt1424177970399",
+      "Action": [
+        "s3:GetBucketPolicy",
+        "s3:GetBucketVersioning",
+        "s3:GetBucketWebsite",
+        "s3:GetObject",
+        "s3:GetObjectVersion"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::bootcamppractice", "arn:aws:s3:::bootcamppractice/*"
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::827647373187:user/S3Tester"
+        ]
+      }
+    }
+  ]
+}

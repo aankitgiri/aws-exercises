@@ -1,0 +1,26 @@
+1) What is maximum size of object that can be stored on S3
+
+Individual Amazon S3 objects can range in size from 1 byte to 5 terabytes. The largest object that can be uploaded in a single PUT is 5 gigabytes.
+
+2)Create a bucket (CLI). 
+
+aws s3 mb s3://bootcamppractice
+
+3)Add Objects to Bucket (CLI)
+
+ aws s3 cp a.text s3://bootcamppractice/abc.text
+
+4)Add folders to Bucket (CLI)
+
+5)Add objects within folder (CLI) 
+
+aws s3 cp a.text s3://bootcamppractice/ankit
+
+12)Add Couple of HTML files to Bucket.
+
+aws s3 cp index.html s3://bootcamppractice/html/index.html
+
+13)Serve added HTML pages (added in step 7) directly from S3 Bucket
+
+
+

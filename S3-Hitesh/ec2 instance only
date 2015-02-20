@@ -1,0 +1,16 @@
+{
+  "Id": "Policy1424178934055",
+  "Statement": [
+    {
+      "Sid": "Stmt1424178929212",
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::bootcamppractice",
+      "Principal": {
+        "AWS": [
+          "arn:aws:ec2::827647373187:root"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "Id": "Policy1424178326180",
+  "Statement": [
+    {
+      "Sid": "Stmt1424178323312",
+      "Action": [
+        "s3:PutObject"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::bootcamppractice",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::827647373187:user/S3Tester"
+        ]
+      }
+    }
+  ]
+}
