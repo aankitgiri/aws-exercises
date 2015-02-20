@@ -1,0 +1,37 @@
+Q1) Ben can terminate instance_1 but not instance_2
+
+policy_to_deny_termination_particular_instance
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1424455406000",
+      "Effect": "Deny",
+      "Action": [
+        "ec2:TerminateInstances"
+      ],
+      "Resource": [
+        "arn:aws:ec2:us-east-1:827647373187:i-7f1c148e"
+      ]
+    }
+  ]
+}
+
+
+policy_to_ALLOW_termination_particular_instance
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1424455647000",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:TerminateInstances"
+      ],
+      "Resource": [
+        "arn:aws:ec2:us-east-1:827647373187:i-65131b94"
+      ]
+    }
+  ]
+}
