@@ -1,0 +1,43 @@
+1. Create a volume.
+
+aws ec2 create-volume --size 1 --availability-zone us-east-1a --volume-type gp2
+
+2. Attach EBS Volume to a Running Instance.
+
+ec2-attach-volume vol-7fbd3564 --instance i-97624766 --device /dev/sdf --aws-access-key AKIAJCENA3ENKEAFX4RQ --aws-secret-key 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
+
+3. Prewarm the Volume
+
+lsblk
+
+sudo dd if=/dev/zero of=/dev/xvdf bs=1M
+*Read-only: To pre-warm only previously written blocks
+
+sudo dd if=/dev/xvdf of=/dev/xvdf conv=notrunc bs=1M
+* Read-then-write-back: To pre-warm an entire restored volume
+
+4. Create Filesystem on the attached volume and then mount the volume.
+
+sudo file -s /dev/xvdf
+sudo mkfs -t ext4 /dev/xvdf
+sudo mkdir /ebs-volume
+sudo mount /dev/xvdf /ebs-volume
+
+sudo vi /etc/fstab
+
+add the line
+/dev/xvdf       /ebs-volume   ext4    defaults,nofail        0       2
+
+
+5. Create a snapshot of all the volumes.
+
+
+
+6. Increase the size of volumes.
+
+7. Copy volume from one region to another region.
+
+8. Tag the snapshot with Instance Name.
+
+
+
