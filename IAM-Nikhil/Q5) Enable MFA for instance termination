@@ -1,0 +1,14 @@
+{
+ "Version": "2012-10-17",
+ "Statement": [
+{ "Effect": "Allow",
+ "Action": [ 
+"ec2:StopInstances", "ec2:TerminateInstances" ],
+ "Resource": ["*"],
+ "Condition": {"Bool": {"aws:MultiFactorAuthPresent": "true"}} }] }
+"Resource": [
+        "arn:aws:ec2:us-east-1:827647373187:i-7f1c148e"
+      ]
+    }
+  ]
+}
